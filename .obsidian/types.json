@@ -1,0 +1,9 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "related_project": "text",
+    "tech_stack": "multitext"
+  }
+}

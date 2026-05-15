@@ -1,0 +1,256 @@
+{
+  "main": {
+    "id": "d39df7accfc9eddc",
+    "type": "split",
+    "children": [
+      {
+        "id": "149bda171b68d784",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b26bbaf2d1c9686",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "50-Projects (项目实战 - 最有价值的数据)/笔记推送/需求文档.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "需求文档"
+            }
+          },
+          {
+            "id": "84c29f31361e18ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "50-Projects (项目实战 - 最有价值的数据)/笔记推送/实现方案.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "实现方案"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "123b577fb324d46b",
+    "type": "split",
+    "children": [
+      {
+        "id": "34e34c230281edf5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "891aa8f1c1d099d1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "afde59ffac7b4ee8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "4668f1f71e4c1400",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 255.5
+  },
+  "right": {
+    "id": "8921bda485b5cd97",
+    "type": "split",
+    "children": [
+      {
+        "id": "01eb26da910677ec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "96766cb1133ebf8b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "业务需求 的反向链接列表"
+            }
+          },
+          {
+            "id": "dd834eed88561b16",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "业务需求 的出链列表"
+            }
+          },
+          {
+            "id": "26ce5d99789799aa",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "8de4bfb9a5e1b3bb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "3392837c85995716",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "业务需求 的大纲"
+            }
+          },
+          {
+            "id": "306bee4bc8e54a08",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Connections"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "smart-connections:Smart Lookup: Open lookup view": false
+    }
+  },
+  "active": "84c29f31361e18ce",
+  "lastOpenFiles": [
+    "config.yaml",
+    "data/push.db",
+    "data",
+    "50-Projects (项目实战 - 最有价值的数据)/笔记推送/需求文档.md",
+    "Excalidraw/Drawing 2026-05-15 15.07.30.excalidraw.md",
+    "Excalidraw",
+    "50-Projects (项目实战 - 最有价值的数据)/IM系统/微服务IM平台.md",
+    "50-Projects (项目实战 - 最有价值的数据)/笔记推送",
+    "30-Backend-Infra (后端基建与分布式)/grpc.md",
+    "Go语言核心]][[40-Architecture (架构设计与通用方案)/系统设计]] [[50-Projects (项目实战 - 最有价值的数据)/微服务IM平台.md",
+    "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
+    "Go语言核心]][[40-Architecture (架构设计与通用方案)/系统设计]] [[50-Projects (项目实战 - 最有价值的数据)",
+    "Go语言核心]][[40-Architecture (架构设计与通用方案)",
+    "40-Architecture (架构设计与通用方案)/系统设计.md",
+    "30-Backend-Infra (后端基建与分布式)/场景题.md",
+    "20-Go-Ecosystem (Go 语言与生态)/Go语言核心.md",
+    "10-Computer-Science (底层基石)/操作系统.md",
+    "50-Projects (项目实战 - 最有价值的数据)/竞赛项目-商品评论解析.md",
+    "50-Projects (项目实战 - 最有价值的数据)/FlexiRAG Engine.md",
+    "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
+    "50-Projects (项目实战 - 最有价值的数据)/IM系统/脚本、部署等代码.md",
+    "50-Projects (项目实战 - 最有价值的数据)/IM系统/无标题文档.md",
+    "50-Projects (项目实战 - 最有价值的数据)/微服务IM平台.md",
+    "80-Life-Log (成长与复盘)/自我介绍.md",
+    "20-Go-Ecosystem (Go 语言与生态)/Golang.md",
+    "20-Go-Ecosystem (Go 语言与生态)/1Go语言核心.md",
+    "20-Go-Ecosystem (Go 语言与生态)/10-Go语言核心.md",
+    "50-Projects (项目实战 - 最有价值的数据)/面试速记/50-竞赛项目-商品评论解析.md",
+    "50-Projects (项目实战 - 最有价值的数据)/面试速记/40-微服务IM平台.md",
+    "50-Projects (项目实战 - 最有价值的数据)/面试速记/30-FlexiRAG Engine.md",
+    "50-Projects (项目实战 - 最有价值的数据)/面试速记",
+    "40-Architecture (架构设计与通用方案)/面试速记/60-系统设计.md",
+    "40-Architecture (架构设计与通用方案)/面试速记",
+    "30-Backend-Infra (后端基建与分布式)/面试速记/70-场景题.md",
+    "30-Backend-Infra (后端基建与分布式)/面试速记",
+    "80-Life-Log (成长与复盘)/面试速记",
+    "未命名.canvas"
+  ]
+}

@@ -215,6 +215,7 @@
   },
   "active": "84c29f31361e18ce",
   "lastOpenFiles": [
+    "data/push.db-journal",
     "50-Projects (项目实战 - 最有价值的数据)/笔记推送/实现方案.md",
     "00-Inbox(小记，闪念)/测试笔记-笔记推送.md",
     "config.yaml",
@@ -248,7 +249,6 @@
     "50-Projects (项目实战 - 最有价值的数据)/面试速记/40-微服务IM平台.md",
     "50-Projects (项目实战 - 最有价值的数据)/面试速记/30-FlexiRAG Engine.md",
     "50-Projects (项目实战 - 最有价值的数据)/面试速记",
-    "40-Architecture (架构设计与通用方案)/面试速记/60-系统设计.md",
     "40-Architecture (架构设计与通用方案)/面试速记",
     "30-Backend-Infra (后端基建与分布式)/面试速记",
     "未命名.canvas"

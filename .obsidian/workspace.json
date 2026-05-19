@@ -189,9 +189,19 @@
               "icon": "smart-connections",
               "title": "Connections"
             }
+          },
+          {
+            "id": "08f5176a16022492",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -209,10 +219,11 @@
       "obsidian-excalidraw-plugin:New drawing": false,
       "smart-connections:Smart Connections: Open connections view": false,
       "smart-connections:Smart Connections: Open random connection": false,
-      "smart-connections:Smart Lookup: Open lookup view": false
+      "smart-connections:Smart Lookup: Open lookup view": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "84c29f31361e18ce",
+  "active": "891aa8f1c1d099d1",
   "lastOpenFiles": [
     "10-Computer-Science (底层基石)/image/Pasted image 20260516104707.png",
     "10-Computer-Science (底层基石)/image/Pasted image 20260516104701.png",

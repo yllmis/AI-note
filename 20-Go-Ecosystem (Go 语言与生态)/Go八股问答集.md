@@ -7,15 +7,6 @@ tags:
 related_project:
   - "[[20-Go-Ecosystem (Go 语言与生态)/Go语言核心]]"
 ---
-**## 内存逃逸的原因
-
-内存逃逸的主要原因是在函数返回后，局部变量仍然被外部引用。以下是一些可能导致内存逃逸的情况：
-
-- 变量的生命周期超出了其作用域，当一个变量在函数外部被引用，比如被赋值给一个包级别的变量或者作为返回值，这个变量就会发生逃逸。
-- 大对象的分配，对于大型的数据结构，Go 有时会选择在堆上分配内存，即使它们没有在函数外部被引用。
-- [闭包](https://zhida.zhihu.com/search?content_id=237625809&content_type=Article&match_order=1&q=%E9%97%AD%E5%8C%85&zhida_source=entity)引用，如果一个函数返回一个闭包，并且该闭包引用了函数的局部变量，那么这些变量也会逃逸到堆上。
-- [接口动态分配](https://zhida.zhihu.com/search?content_id=237625809&content_type=Article&match_order=1&q=%E6%8E%A5%E5%8F%A3%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D&zhida_source=entity)，当一个具体类型的变量被赋值给接口类型时，由于接口的动态特性，具体的值可能会发生逃逸。
-- [切片](https://zhida.zhihu.com/search?content_id=237625809&content_type=Article&match_order=1&q=%E5%88%87%E7%89%87&zhida_source=entity)和 map 操作，如果对切片进行操作可能导致其重新分配内存，或者向 map 中插入数据，这些操作可能导致逃逸。**
 ## Q1：goroutine 和线程有什么区别？调度模型是怎样的？
 
 **答案**：

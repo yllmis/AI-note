@@ -1,7 +1,12 @@
-
-标签：#Go #基础
-内链：[[30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)/系统设计]]
-
+---
+tags:
+  - Go
+  - 基础
+related_project: |-
+  - [[30-Backend-Infra (后端基建与分布式)/框架与中间件]]
+  - [[30-Backend-Infra (后端基建与分布式)/场景题]] 
+  - [[40-Architecture (架构设计与通用方案)/系统设计]]
+---
 ## 1. GMP调度模型
 **答案**：
 - G：Goroutine，用户态轻量级线程，包含栈、指令、状态。

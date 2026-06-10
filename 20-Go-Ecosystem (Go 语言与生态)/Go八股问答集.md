@@ -199,3 +199,234 @@ append 性能问题：
 共享底层数组陷阱：`b = a[1:3]` 后 `b = append(b, 100)` 会影响 a[3]。
 
 **记忆**：**SliceHeader 三字段，Data Len Cap；扩容翻倍或渐进，预分配避免性能坑；共享底层数组 append 会互相影响**。
+
+---
+
+## Q11：Go 的 map 底层实现是什么？为什么不能取地址？并发读写会怎样？
+
+**答案**：
+
+传统底层结构 `hmap`（Go 1.23 及之前）：
+- `count`：元素个数
+- `B`：桶的数量 = 2^B
+- `buckets`：桶数组，每个桶存 8 个 kv 对
+- `overflow`：溢出桶链表
+- 哈希值低 8 位定位桶，高 8 位（tophash）做桶内快速比较
+
+Go 1.24+ Swiss Table：用开放寻址法替代拉链法，内存局部性更好。
+
+不能取地址：扩容时 bucket 重新分配内存迁移数据，之前的指针会悬空，编译器直接禁止。
+
+并发读写：运行时检测到并发读写直接 fatal（不是 panic），程序崩溃。解决方案：sync.Mutex、sync.RWMutex、sync.Map。
+
+扩容触发条件：
+- 负载因子 > 6.5 → 翻倍扩容
+- 溢出桶太多 → 等量扩容（整理碎片）
+
+**记忆**：**hmap 桶模型 2^B 个桶，tophash 定位桶内位置；1.24 换 Swiss Table 开放寻址；取地址禁止防悬针，并发读写直接 fatal**。
+
+---
+
+## Q12：string 和 []byte 转换为什么有性能开销？怎么优化？
+
+**答案**：
+- string 不可变，[]byte 可变，转换必须拷贝底层数组保证安全
+
+编译器自动优化（无拷贝）：
+- `string(b) == "hello"` → 直接比较
+- `m[string(b)]` → map 查找
+- `for range []byte(s)` → 迭代
+
+手动优化：
+- `unsafe` 零拷贝（必须确保 []byte 不被修改）：`*(*string)(unsafe.Pointer(&b))`
+- `sync.Pool` 复用 []byte 减少分配
+- `strings.Builder` / `bytes.Buffer` 避免中间转换
+
+**记忆**：**string 不可变所以拷贝保安全；编译器对 map 比较自动优化；unsafe 零拷贝要确保不改 []byte；Builder 和 Pool 减少分配**。
+
+---
+
+## Q13：Go 的 struct 内存对齐是怎样的？怎么优化 struct 大小？
+
+**答案**：
+
+CPU 按固定字节数（对齐边界）访问内存，Go 编译器自动在字段间插入 padding 保证对齐。
+
+对齐规则：
+- 每个字段的偏移量必须是其大小的整数倍
+- struct 的总大小是最大字段对齐值的整数倍
+
+优化方法：**相同/相近大小的字段放一起**（方向不重要，关键是避免被其他大小的字段插断产生 padding）。
+
+```go
+// 浪费：24 字节（bool 被 int64 插断）
+type Bad struct {
+    a bool    // 1 + 7 padding
+    b int64   // 8
+    c bool    // 1 + 7 padding
+}
+
+// 优化：16 字节（两个 bool 相邻）
+type Good struct {
+    a bool    // 1
+    c bool    // 1 + 6 padding
+    b int64   // 8
+}
+```
+
+验证工具：`unsafe.Sizeof()`、`go vet -fieldalignment`。
+
+**记忆**：**CPU 按边界访问，未对齐要插 padding；相同大小字段放一起省空间；fieldalignment 工具一键检查**。
+
+---
+
+## Q14：Go 中值传递和引用传递的区别？哪些类型能修改底层数据？
+
+**答案**：
+
+Go **只有值传递**，没有引用传递。所有函数参数都是拷贝一份。
+
+能修改底层数据的类型（内部含指针）：
+- **slice**：拷贝 SliceHeader（指针+Len+Cap），指向同一底层数组，修改元素会影响原 slice
+- **map**：拷贝的是 hmap 指针，修改会影响原 map
+- **channel**：拷贝 hmap 指针，操作的是同一个 channel
+- **string**：拷贝 StringHeader（指针+Len），但 string 不可变
+- **指针**：拷贝的是地址值，`*p` 修改的是同一块内存
+
+不能修改：int、float、struct（值类型）拷贝后互不影响。
+
+**记忆**：**Go 只有值传递；slice/map/channel 内部含指针所以能改底层数据；struct/int 等纯值类型拷贝后互不影响**。
+
+---
+
+## Q15：new 和 make 的区别？
+
+**答案**：
+
+**new(T)**：
+- 分配零值内存，返回 `*T`（指针）
+- 可用于任何类型
+- 只分配内存，不初始化内部结构
+
+**make(T, args)**：
+- 只能用于 slice、map、channel
+- 返回 `T` 本身（不是指针）
+- 分配内存 + 初始化内部数据结构
+
+关键区别：`new([]int)` 返回 `*[]int`，值是 nil slice，不能 append；`make([]int, 0)` 返回 `[]int`，是空 slice，可以 append。
+
+**记忆**：**new 分配零值返回指针，任何类型都能用；make 初始化内部结构返回原值，只用于 slice/map/channel**。
+
+---
+
+## Q16：Go 中 context 是什么？有哪些类型？怎么用？
+
+**答案**：
+
+context 用于在 goroutine 之间传递取消信号、超时、截止时间、请求作用域的值。
+
+四种类型：
+1. `context.Background()` — 根 context，main/init/顶层使用
+2. `context.TODO()` — 不确定用什么时的占位符
+3. `context.WithCancel(parent)` — 手动调用 cancel() 取消
+4. `context.WithTimeout(parent, duration)` — 超时自动取消
+5. `context.WithDeadline(parent, time)` — 到指定时间自动取消
+6. `context.WithValue(parent, key, val)` — 存储请求作用域值
+
+传播规则：父取消 → 子全取消；子取消 → 父不受影响。
+
+使用规范：第一个参数传 ctx，不存 struct 里，不传 nil，key 用自定义类型。
+
+**记忆**：**context 四种类型：Background 根、Cancel 手动取消、Timeout/Deadline 超时取消、Value 传值；父取消子跟着取消，子取消父不受影响；第一个参数传，不存 struct 里**。
+
+---
+
+## Q17：Go 的 error 处理机制是怎样的？error 和 panic 的使用场景区别？
+
+**答案**：
+
+error 底层是接口：`type error interface { Error() string }`
+
+创建方式：`errors.New()`、`fmt.Errorf("%w", err)`、自定义 struct 实现接口。
+
+Go 1.13+ 错误链：
+- `%w` 包装错误
+- `errors.Is(err, target)` — 判断是否包含 target
+- `errors.As(err, &target)` — 提取特定类型
+
+error vs panic：
+- **error**：可预期、可恢复（文件不存在、网络超时、参数非法）
+- **panic**：不可恢复的程序错误（数组越界、nil 解引用、初始化失败）
+
+**记忆**：**error 是接口有 Error() 方法；Is 判断、As 提取、%w 包装；error 处可预期错误，panic 处程序错误**。
+
+---
+
+## Q18：goroutine 泄漏是什么？怎么避免？
+
+**答案**：
+
+goroutine 已经无法正常完成工作，但又无法退出，永远占用内存和调度资源。
+
+常见原因：
+1. **channel 阻塞**（最常见）：发送到无接收者的 channel、从无发送者 channel 接收、向已满缓冲 channel 发送
+2. **锁未释放**：死锁导致永远阻塞
+3. **死循环**：缺少退出条件
+4. **select 无退出分支**：没有 ctx.Done() 也没有 default
+5. **连接未关闭**：goroutine 等待读写
+
+避免方法：
+- context+select 做退出机制
+- 确保 channel 发送/接收配对
+- 设置超时（time.After、context.WithTimeout）
+- WaitGroup 确保所有 goroutine 退出
+- runtime.NumGoroutine() 监控数量
+
+**记忆**：**channel 阻塞是最大元凶；context+select 做退出机制；WaitGroup 等待退出；NumGoroutine 监控数量**。
+
+---
+
+## Q19：Go 中怎么做单元测试？table-driven test 是什么？
+
+**答案**：
+
+基本规则：文件名 `_test.go`，函数名 `TestXxx(t *testing.T)`，运行 `go test ./...`
+
+Table-Driven Test：将测试用例放在结构体切片中循环执行，用 `t.Run(name, func)` 跑子测试。
+
+常用方法：
+- `t.Error()` / `t.Errorf()` — 报错继续执行
+- `t.Fatal()` / `t.Fatalf()` — 报错立即停止
+- `t.Run()` — 子测试
+- `t.Parallel()` — 并行执行
+- `t.Cleanup()` — 清理函数
+
+其他测试类型：
+- Benchmark：`func BenchmarkXxx(b *testing.B)`，`go test -bench=.`
+- Example：`func ExampleXxx()`，文档 + 可执行示例
+
+常用工具：`-cover` 覆盖率、`-race` 竞态检测、`testify/assert` 断言库。
+
+**记忆**：**文件名 _test.go，函数名 TestXxx；table-driven 结构体切片循环跑；t.Run 子测试，t.Fatal 停，t.Error 继续；-cover 看覆盖率，-race 检测竞态**。
+
+---
+
+## Q20：Go 的 init 函数是什么？执行顺序是怎样的？
+
+**答案**：
+
+每个包可以有多个 init 函数，不能手动调用，无参数无返回值。
+
+执行顺序（从底到顶）：
+1. 依赖包的 init 先执行 — 深度优先遍历 import 依赖树
+2. 同包内按文件名排序（字典序）
+3. 同文件内按出现顺序
+
+执行链：被依赖包全局变量初始化 → 被依赖包 init → 当前包全局变量初始化 → 当前包 init → main
+
+注意事项：
+- init 中不要依赖其他包的 init 顺序
+- init 中不要做耗时操作
+- 用 `_` 导入包仅执行 init：`import _ "github.com/go-sql-driver/mysql"`
+
+**记忆**：**依赖包 init 先执行，同包按文件名序，同文件按出现序；全局变量在 init 之前初始化；不要在 init 里做耗时操作**。

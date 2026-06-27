@@ -121,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 255.5,
-    "collapsed": true
+    "width": 255.5
   },
   "right": {
     "id": "8921bda485b5cd97",
@@ -230,7 +229,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -252,16 +251,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "08f5176a16022492",
+  "active": "af99314de1c7d821",
   "lastOpenFiles": [
+    "20-Go-Ecosystem (Go 语言与生态)/Go底层实现速查.md",
+    "30-Backend-Infra (后端基建与分布式)/消息队列.md",
+    "50-Projects (项目实战 - 最有价值的数据)/竞赛项目-商品评论解析.md",
+    "50-Projects (项目实战 - 最有价值的数据)/笔记推送/实现方案.md",
+    "60-AI-Agent (前沿探索)/NLP/BERT.md",
+    "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
+    "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)/系统设计.md",
+    "80-Life-Log (成长与复盘)/面经/追一科技.md",
+    "80-Life-Log (成长与复盘)/面经/追一科技.md.tmp.2143.9143e7d213d0",
+    "80-Life-Log (成长与复盘)/面经",
     "20-Go-Ecosystem (Go 语言与生态)/Go语言核心.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/IM-Grpc 面试 Q&A.md",
-    "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
-    "60-AI-Agent (前沿探索)/NLP/BERT.md",
-    "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)/系统设计.md",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)",
-    "30-Backend-Infra (后端基建与分布式)/消息队列.md",
     "30-Backend-Infra (后端基建与分布式)/消息队列/Kafka.md",
     "60-AI-Agent (前沿探索)/NLP",
     "10-Computer-Science (底层基石)/操作系统.md",
@@ -276,27 +281,21 @@
     "image",
     "00-Inbox(小记，闪念)/测试笔记-笔记推送.md",
     "data/push.db-journal",
-    "50-Projects (项目实战 - 最有价值的数据)/笔记推送/实现方案.md",
     "config.yaml",
     "data/push.db",
-    "data",
     "50-Projects (项目实战 - 最有价值的数据)/笔记推送/需求文档.md",
     "Excalidraw/Drawing 2026-05-15 15.07.30.excalidraw.md",
-    "Excalidraw",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/微服务IM平台.md",
     "30-Backend-Infra (后端基建与分布式)/grpc.md",
     "Go语言核心]][[40-Architecture (架构设计与通用方案)/系统设计]] [[50-Projects (项目实战 - 最有价值的数据)/微服务IM平台.md",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
     "40-Architecture (架构设计与通用方案)/系统设计.md",
     "30-Backend-Infra (后端基建与分布式)/场景题.md",
-    "50-Projects (项目实战 - 最有价值的数据)/竞赛项目-商品评论解析.md",
     "50-Projects (项目实战 - 最有价值的数据)/FlexiRAG Engine.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/脚本、部署等代码.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/无标题文档.md",
     "50-Projects (项目实战 - 最有价值的数据)/微服务IM平台.md",
-    "80-Life-Log (成长与复盘)/自我介绍.md",
-    "20-Go-Ecosystem (Go 语言与生态)/Golang.md",
     "未命名.canvas"
   ]
 }

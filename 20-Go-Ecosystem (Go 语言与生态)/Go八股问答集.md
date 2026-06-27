@@ -433,3 +433,102 @@ Table-Driven Test：将测试用例放在结构体切片中循环执行，用 `t
 - 用 `_` 导入包仅执行 init：`import _ "github.com/go-sql-driver/mysql"`
 
 **记忆**：**依赖包 init 先执行，同包按文件名序，同文件按出现序；全局变量在 init 之前初始化；不要在 init 里做耗时操作**。
+
+---
+
+## Q21：Go 中怎么做并发安全的数据结构？除了 mutex 还有哪些方案？
+
+**答案**：
+
+1. **sync.Mutex**：通用互斥锁，同一时刻只有一个 goroutine 访问
+2. **sync.RWMutex**：读写锁，读共享写互斥，适合读多写少
+3. **channel**：通过通信共享内存，适合生产者-消费者模式
+4. **sync/atomic**：原子操作，无锁，适合计数器、标志位、CAS
+5. **sync.Map**：读多写少、key 稳定的场景
+6. **sync.Once**：确保只执行一次（单例、初始化）
+7. **分片锁**：把一个大锁拆成多个小锁，减少锁竞争
+
+选择原则：简单计数器→atomic，读多写少→RWMutex/sync.Map，生产者消费者→channel，通用互斥→Mutex。
+
+**记忆**：**Mutex 通用互斥，RWMutex 读多写少，channel 通信共享，atomic 无锁最快，Once 只执行一次，分片锁减少竞争**。
+
+---
+
+## Q22：Go 的反射（reflect）是什么？有什么性能问题？
+
+**答案**：
+
+在运行时动态获取类型信息、调用方法、修改值的能力。
+
+三大法则：
+1. 从接口值到反射对象：`reflect.TypeOf(i)` 获取类型，`reflect.ValueOf(i)` 获取值
+2. 从反射对象到接口值：`v.Interface()` 还原为 `interface{}`
+3. 修改反射对象必须可设置：必须传指针 `reflect.ValueOf(&x).Elem().SetInt(42)`
+
+性能慢的原因：运行时类型检查、间接调用无法内联、参数可能逃逸到堆、值类型和 interface{} 装箱拆箱。
+
+常见使用场景：JSON 序列化、ORM 映射、依赖注入、结构体对比（reflect.DeepEqual）。
+
+替代方案：代码生成（go generate）、泛型（Go 1.18+）。
+
+**记忆**：**反射三大法则：接口到反射、反射到接口、修改要传指针；慢在运行时检查+间接调用+逃逸堆；用泛型或代码生成替代**。
+
+---
+
+## Q23：Go 中怎么做优雅关闭（graceful shutdown）？
+
+**答案**：
+
+收到终止信号后，停止接受新请求，等待正在处理的请求完成，释放资源后退出。
+
+实现步骤：
+1. `signal.Notify` 监听 SIGINT/SIGTERM
+2. `srv.Shutdown(ctx)` 停止接受新连接，等待已有请求完成
+3. 设置超时 context，超时后强制退出
+4. 关闭数据库连接、消息队列等资源
+
+gRPC 用 `server.GracefulStop()`，自定义服务用 channel 广播关闭信号。
+
+**记忆**：**signal.Notify 监听信号，Shutdown 等待已有请求，context 超时兜底，最后释放资源**。
+
+---
+
+## Q24：Go 的接口是什么？鸭子类型是什么意思？
+
+**答案**：
+
+Go 接口隐式实现，不需要 `implements` 关键字，只要类型实现了接口的所有方法就自动满足该接口。
+
+鸭子类型："If it walks like a duck and quacks like a duck, then it must be a duck." 不关心具体类型，只关心有没有需要的方法。Go 是编译期鸭子类型（静态检查）。
+
+接口使用原则：
+1. 接口越小越好：`io.Reader` 只有一个方法，但几乎无处不在
+2. 在消费者端定义接口：谁用谁定义
+3. 返回具体类型，接受接口参数
+
+**记忆**：**Go 接口隐式实现，只要方法签名匹配就满足；鸭子类型编译期检查，看方法不看类型；接口越小越好，消费者端定义**。
+
+---
+
+## Q25：Go 的泛型是什么？什么时候该用泛型？
+
+**答案**：
+
+Go 1.18+ 泛型语法：类型参数 + 类型约束。
+
+```go
+func Max[T constraints.Ordered](a, b T) T {
+    if a > b { return a }
+    return b
+}
+```
+
+类型约束：`~int` 表示底层类型是 int（包括 `type MyInt int`）。
+
+`any` = 任何类型，`comparable` = 可用 `==` 比较。
+
+该用泛型：通用数据结构（Stack[T]）、通用算法（Filter[T]）、类型安全容器。
+
+不该用泛型：只处理一种具体类型、逻辑依赖具体类型行为、为了炫技。
+
+**记忆**：**泛型用类型参数 [T constraint]，~表示底层类型；通用容器和算法该用，具体类型不该用；any 任何类型，comparable 可比较**。

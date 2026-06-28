@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
+                "file": "80-Life-Log (成长与复盘)/自我介绍.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Go八股问答集"
+              "title": "自我介绍"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
+                "file": "80-Life-Log (成长与复盘)/自我介绍.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Go八股问答集 的大纲"
+              "title": "自我介绍 的大纲"
             }
           },
           {
@@ -253,14 +253,14 @@
   },
   "active": "af99314de1c7d821",
   "lastOpenFiles": [
+    "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
+    "80-Life-Log (成长与复盘)/面经/追一科技.md",
     "20-Go-Ecosystem (Go 语言与生态)/Go底层实现速查.md",
     "30-Backend-Infra (后端基建与分布式)/消息队列.md",
     "50-Projects (项目实战 - 最有价值的数据)/竞赛项目-商品评论解析.md",
     "50-Projects (项目实战 - 最有价值的数据)/笔记推送/实现方案.md",
     "60-AI-Agent (前沿探索)/NLP/BERT.md",
-    "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)/系统设计.md",
-    "80-Life-Log (成长与复盘)/面经/追一科技.md",
     "80-Life-Log (成长与复盘)/面经/追一科技.md.tmp.2143.9143e7d213d0",
     "80-Life-Log (成长与复盘)/面经",
     "20-Go-Ecosystem (Go 语言与生态)/Go语言核心.md",

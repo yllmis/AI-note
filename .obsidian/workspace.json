@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/自我介绍.md",
+                "file": "50-Projects (项目实战 - 最有价值的数据)/IM系统/面试高频知识点补充.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "自我介绍"
+              "title": "面试高频知识点补充"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/自我介绍.md",
+                "file": "50-Projects (项目实战 - 最有价值的数据)/IM系统/面试高频知识点补充.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "自我介绍 的大纲"
+              "title": "面试高频知识点补充 的大纲"
             }
           },
           {
@@ -251,8 +251,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af99314de1c7d821",
+  "active": "891aa8f1c1d099d1",
   "lastOpenFiles": [
+    "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
+    "50-Projects (项目实战 - 最有价值的数据)/IM系统/面试高频知识点补充.md",
+    "80-Life-Log (成长与复盘)/自我介绍.md",
     "20-Go-Ecosystem (Go 语言与生态)/Go八股问答集.md",
     "80-Life-Log (成长与复盘)/面经/追一科技.md",
     "20-Go-Ecosystem (Go 语言与生态)/Go底层实现速查.md",
@@ -288,14 +291,11 @@
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/微服务IM平台.md",
     "30-Backend-Infra (后端基建与分布式)/grpc.md",
     "Go语言核心]][[40-Architecture (架构设计与通用方案)/系统设计]] [[50-Projects (项目实战 - 最有价值的数据)/微服务IM平台.md",
-    "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
     "40-Architecture (架构设计与通用方案)/系统设计.md",
     "30-Backend-Infra (后端基建与分布式)/场景题.md",
     "50-Projects (项目实战 - 最有价值的数据)/FlexiRAG Engine.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/脚本、部署等代码.md",
-    "50-Projects (项目实战 - 最有价值的数据)/IM系统/无标题文档.md",
-    "50-Projects (项目实战 - 最有价值的数据)/微服务IM平台.md",
     "未命名.canvas"
   ]
 }

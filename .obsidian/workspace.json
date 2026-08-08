@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/面经/得物.md",
+                "file": "80-Life-Log (成长与复盘)/面经/百度.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "得物"
+              "title": "百度"
             }
           },
           {
@@ -84,7 +84,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -199,13 +201,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/面经/得物.md",
+                "file": "80-Life-Log (成长与复盘)/面经/百度.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "得物 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -253,8 +255,9 @@
   },
   "active": "af99314de1c7d821",
   "lastOpenFiles": [
-    "80-Life-Log (成长与复盘)/面经/面试高频知识点补充.md",
     "80-Life-Log (成长与复盘)/面经/得物.md",
+    "80-Life-Log (成长与复盘)/面经/百度.md",
+    "80-Life-Log (成长与复盘)/面经/面试高频知识点补充.md",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/IM-Grpc 面试 Q&A.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/无标题文档.md",
@@ -295,7 +298,6 @@
     "data/push.db",
     "50-Projects (项目实战 - 最有价值的数据)/笔记推送/需求文档.md",
     "Excalidraw/Drawing 2026-05-15 15.07.30.excalidraw.md",
-    "30-Backend-Infra (后端基建与分布式)/grpc.md",
     "未命名.canvas"
   ]
 }

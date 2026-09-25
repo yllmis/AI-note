@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/面经/百度.md",
+                "file": "80-Life-Log (成长与复盘)/面经/得物.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "百度"
+              "title": "得物"
             }
           },
           {
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/面经/百度.md",
+                "file": "80-Life-Log (成长与复盘)/面经/得物.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -255,9 +255,15 @@
   },
   "active": "af99314de1c7d821",
   "lastOpenFiles": [
+    "80-Life-Log (成长与复盘)/面经/百度.md",
+    "30-Backend-Infra (后端基建与分布式)/Redis.md",
+    "60-AI-Agent (前沿探索)/Claude Code/Claude Code记忆管理.md",
+    "30-Backend-Infra (后端基建与分布式)/Redis三剑客.md",
+    "60-AI-Agent (前沿探索)/Codex/Codex记忆管理.md",
+    "60-AI-Agent (前沿探索)/Codex",
+    "60-AI-Agent (前沿探索)/Claude Code",
     "80-Life-Log (成长与复盘)/面经/欢乐互娱.md",
     "80-Life-Log (成长与复盘)/面经/得物.md",
-    "80-Life-Log (成长与复盘)/面经/百度.md",
     "80-Life-Log (成长与复盘)/面经/面试高频知识点补充.md",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/IM-Grpc 面试 Q&A.md",
@@ -277,12 +283,10 @@
     "30-Backend-Infra (后端基建与分布式)/消息队列.md",
     "50-Projects (项目实战 - 最有价值的数据)/竞赛项目-商品评论解析.md",
     "50-Projects (项目实战 - 最有价值的数据)/笔记推送/实现方案.md",
-    "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)/系统设计.md",
     "80-Life-Log (成长与复盘)/面经/追一科技.md.tmp.2143.9143e7d213d0",
     "80-Life-Log (成长与复盘)/面经",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)",
-    "30-Backend-Infra (后端基建与分布式)/消息队列/Kafka.md",
     "60-AI-Agent (前沿探索)/NLP",
     "10-Computer-Science (底层基石)/image/Pasted image 20260516104707.png",
     "10-Computer-Science (底层基石)/image/Pasted image 20260516104701.png",
@@ -293,11 +297,7 @@
     "10-Computer-Science (底层基石)/image/Pasted image 20260516103349.png",
     "10-Computer-Science (底层基石)/image",
     "image",
-    "00-Inbox(小记，闪念)/测试笔记-笔记推送.md",
     "data/push.db-journal",
-    "config.yaml",
-    "data/push.db",
-    "50-Projects (项目实战 - 最有价值的数据)/笔记推送/需求文档.md",
     "未命名.canvas"
   ]
 }

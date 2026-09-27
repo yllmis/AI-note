@@ -168,3 +168,46 @@ Canal 订阅 → MQ → 消费者删缓存
 - **最终一致**：最可靠的补偿手段，生产推荐
 
 **记忆**：**binlog 记变更，主从恢复订阅三用；Canal 订阅删缓存，解耦不丢**。
+
+### Canal 原理
+
+**答案**：Canal 把自己**伪装成 MySQL slave**，走主从复制协议拉取 binlog，解析成结构化事件后投递给下游（MQ / ES / Redis）。
+
+```
+业务 → 写 MySQL master
+          ↓ dump 线程推送 binlog（主从协议）
+       Canal（伪装 slave）→ 解析 → MQ → 消费者删缓存 / 同步 ES
+```
+
+**主从复制协议（Canal 完全复用）**：
+1. 记录主库位点（binlog 文件名 + position）
+2. `COM_REGISTER_SLAVE` 注册为从库
+3. `COM_BINLOG_DUMP` 请求增量同步
+4. 主库 dump 线程推送 binlog event
+5. 消费后更新位点
+
+对 MySQL 来说 Canal 就是普通从库——**零侵入**，业务无感。
+
+**内部模块**：
+
+| 模块 | 职责 |
+|------|------|
+| event parser | 解析 binlog（TableMap / WriteRows / UpdateRows / DeleteRows） |
+| event sink | 过滤、加工、按库表路由 |
+| event store | 环形内存队列暂存 |
+| client adapter | 对接 MQ / ES / HBase 等 |
+
+**高可用与可靠性**：
+- **位点续传**：记录消费位点，挂了重启不丢数据
+- **HA**：Canal 主备 + ZooKeeper 选主
+- **必须 Row 格式**：要拿到变更前后值，Statement 格式不行
+
+**Canal vs 延迟双删**：
+
+| | 延迟双删 | Canal |
+|---|---|---|
+| 触发方 | 业务代码 | MySQL 强制 binlog |
+| 删失败 | 自己重试 | 位点续传自动重放 |
+| 侵入性 | 每个写接口加 | 零侵入 |
+
+**记忆**：**Canal 装从库，拉 binlog，解析投 MQ；零侵入、位点续传、要 Row 格式**。

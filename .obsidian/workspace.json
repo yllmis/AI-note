@@ -201,6 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读-自信答题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -230,7 +231,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -252,7 +253,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af99314de1c7d821",
+  "active": "3392837c85995716",
   "lastOpenFiles": [
     "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读提问.md",
     "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读-自信答题.md",

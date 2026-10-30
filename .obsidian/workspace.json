@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读提问.md",
+                "file": "80-Life-Log (成长与复盘)/面经/深信服.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第一版简历解读提问"
+              "title": "深信服"
             }
           },
           {
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读提问.md",
+                "file": "80-Life-Log (成长与复盘)/面经/深信服.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -253,8 +253,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "891aa8f1c1d099d1",
+  "active": "af99314de1c7d821",
   "lastOpenFiles": [
+    "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读提问.md",
     "50-Projects (项目实战 - 最有价值的数据)/IM系统/IM-Grpc 面试 Q&A.md",
     "50-Projects (项目实战 - 最有价值的数据)/FlexiRAG Engine.md",
     "80-Life-Log (成长与复盘)/面经/面试高频知识点补充.md",
@@ -265,7 +266,6 @@
     "80-Life-Log (成长与复盘)/面经/萌梦时代.md",
     "80-Life-Log (成长与复盘)/面经/深信服.md",
     "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读-自信答题.md",
-    "80-Life-Log (成长与复盘)/个人简历解读/第一版简历解读提问.md",
     "30-Backend-Infra (后端基建与分布式)/Kafka.md",
     "80-Life-Log (成长与复盘)/个人简历解读",
     "30-Backend-Infra (后端基建与分布式)/grpc.md",

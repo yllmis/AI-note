@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/实习/深信服/项目文档/平台短期开发方向.md",
+                "file": "80-Life-Log (成长与复盘)/实习/深信服/项目文档/数据平台产品竞争壁垒与演进规划.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "平台短期开发方向"
+              "title": "数据平台产品竞争壁垒与演进规划"
             }
           },
           {
@@ -201,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80-Life-Log (成长与复盘)/实习/深信服/项目文档/平台短期开发方向.md",
+                "file": "80-Life-Log (成长与复盘)/实习/深信服/项目文档/数据平台产品竞争壁垒与演进规划.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -255,10 +255,12 @@
   },
   "active": "af99314de1c7d821",
   "lastOpenFiles": [
+    "80-Life-Log (成长与复盘)/实习/深信服/项目文档/平台短期开发方向.md",
+    "80-Life-Log (成长与复盘)/实习/深信服/项目文档/平台规划.md",
+    "80-Life-Log (成长与复盘)/实习/深信服/项目文档/image/2026数据组平台规划.png",
     "80-Life-Log (成长与复盘)/实习/深信服/项目文档/数据平台产品竞争壁垒与演进规划.md",
     "80-Life-Log (成长与复盘)/实习/深信服/数据平台产品竞争壁垒与演进规划.md",
     "80-Life-Log (成长与复盘)/实习/深信服/项目文档/数据平台架构及网络情况.md",
-    "80-Life-Log (成长与复盘)/实习/深信服/项目文档/平台短期开发方向.md",
     "80-Life-Log (成长与复盘)/实习/深信服/项目文档/image/Pasted image 20261107101447.png",
     "80-Life-Log (成长与复盘)/实习/深信服/项目文档/image",
     "80-Life-Log (成长与复盘)/实习/深信服/第一次谈话 - 实习目标 实习需求 实习发展.md",
@@ -288,8 +290,6 @@
     "60-AI-Agent (前沿探索)/Codex",
     "60-AI-Agent (前沿探索)/Claude Code",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件.md",
-    "50-Projects (项目实战 - 最有价值的数据)/IM系统/无标题文档.md",
-    "50-Projects (项目实战 - 最有价值的数据)/IM系统/业务需求.md",
     "80-Life-Log (成长与复盘)/面经/追一科技.md.tmp.2143.9143e7d213d0",
     "80-Life-Log (成长与复盘)/面经",
     "30-Backend-Infra (后端基建与分布式)/框架与中间件]] [[30-Backend-Infra (后端基建与分布式)/场景题]] [[40-Architecture (架构设计与通用方案)",
